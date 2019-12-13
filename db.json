@@ -14,9 +14,9 @@
     },
     {
       "id": 3,
-      "topping": "Mushroom",
-      "size": "Small",
-      "vegetarian": true
+      "topping": "Mushround",
+      "size": "Medium",
+      "vegetarian": "false"
     },
     {
       "id": 4,
@@ -26,9 +26,9 @@
     },
     {
       "id": 5,
-      "topping": "Bacon",
-      "size": "Medium",
-      "vegetarian": false
+      "topping": "Borc-On",
+      "size": "Large",
+      "vegetarian": "true"
     },
     {
       "id": 6,

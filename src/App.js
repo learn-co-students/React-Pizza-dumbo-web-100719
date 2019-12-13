@@ -11,7 +11,7 @@ state = {
   pizzaToBeEdited: {}
 }
 
-componentDidMount(){
+fetchPizzas = () => {
   fetch(`http://localhost:3000/pizzas`)
   .then(resp => resp.json())
   .then(pizzasArr => {
@@ -19,13 +19,18 @@ componentDidMount(){
   })
 }
 
-componentDidUpdate(){
-  fetch(`http://localhost:3000/pizzas`)
-  .then(resp => resp.json())
-  .then(pizzasArr => {
-    this.setState({currentPizzas: pizzasArr, allPizzas: pizzasArr})
-  })
+
+componentDidMount(){
+ this.fetchPizzas()
 }
+
+// componentDidUpdate(){
+//   fetch(`http://localhost:3000/pizzas`)
+//   .then(resp => resp.json())
+//   .then(pizzasArr => {
+//     this.setState({currentPizzas: pizzasArr, allPizzas: pizzasArr})
+//   })
+// }
 
 grabPizza = (pizzaObj) => {
   this.setState({
@@ -53,7 +58,7 @@ savePizza = () => {
     })
   })
   .then(resp => resp.json())
-  .then(json_resp => console.log(json_resp))
+  .then(json_resp => this.fetchPizzas())
 }
 
 
